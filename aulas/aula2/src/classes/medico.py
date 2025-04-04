@@ -1,4 +1,4 @@
-from pessoa import Pessoa
+from .pessoa import Pessoa  # Import relativo
 from typing import Optional
 
 class Medico(Pessoa):

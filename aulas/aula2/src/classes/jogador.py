@@ -1,5 +1,5 @@
 from typing import Optional
-from pessoa import Pessoa
+from src.classes.pessoa import Pessoa
 
 class ToquesDeBolaMixin:
     def __init__(self):
