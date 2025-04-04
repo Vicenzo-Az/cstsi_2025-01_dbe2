@@ -3,28 +3,20 @@ from typing import Optional, Union
 
 class Atacante:
     def __init__(self, nome: str, idade: int, altura: float, peso: float):
-        self.nome = nome
-        self.idade = idade
-        self.altura = altura
-        self.peso = peso
+        self._nome = nome
+        self._idade = idade
+        self._altura = altura
+        self._peso = peso
         self._imc: Optional[float] = None
         self.calc_imc()
 
-    def calc_imc(self) -> None:
-        """Calcula o IMC com tratamento de erros"""
-        try:
-            if self.altura is not None and self.peso is not None:
-                self._imc = self.peso / (self.altura ** 2)
-            else:
-                raise ValueError("Erro: defina peso e altura primeiro!")
-        except Exception as error:
-            print(f"Erro: {error}")
-            raise
+    @property
+    def nome(self) -> str:
+        return self._nome
 
-    def show_imc(self) -> None:
-        """Exibe o IMC formatado"""
-        if isinstance(self._imc, (int, float)):
-            print(f"\nO IMC do {self.nome} é: {self._imc:.2f}")
+    @property
+    def idade(self) -> int:
+        return self._idade
 
     @property
     def altura(self) -> float:
@@ -44,6 +36,29 @@ class Atacante:
         self._peso = value
         self.calc_imc()
 
+    def calc_imc(self) -> None:
+        """Calcula o IMC com tratamento de erros"""
+        try:
+            if self._altura is None or self._peso is None:
+                raise ValueError("Erro: defina peso e altura primeiro!")
+            
+            if self._altura <= 0:
+                raise ValueError("Altura deve ser maior que zero!")
+                
+            self._imc = self._peso / (self._altura ** 2)
+            
+        except ValueError as e:
+            print(f"Erro no cálculo do IMC: {e}")
+            raise
+        except Exception as e:
+            print(f"Erro inesperado: {e}")
+            raise
+
+    def show_imc(self) -> None:
+        """Exibe o IMC formatado"""
+        if self._imc is not None:
+            print(f"\nO IMC do {self._nome} é: {self._imc:.2f}")
+
     def __setattr__(self, name: str, value: Union[Real, str, list, tuple]) -> None:
         """Permite definir IMC com lista [peso, altura]"""
         if name == 'imc':
@@ -62,10 +77,32 @@ class Atacante:
         """Representação em string formatada"""
         components = [
             f"\n===Dados do {self.__class__.__name__}===",
-            f"\nNome: {self.nome}",
-            f"\nIdade: {self.idade}" if self.idade else "",
-            f"\nPeso: {self.peso}",
-            f"\nAltura: {self.altura}",
+            f"\nNome: {self._nome}",
+            f"\nIdade: {self._idade}" if self._idade else "",
+            f"\nPeso: {self._peso}",
+            f"\nAltura: {self._altura}",
             f"\nIMC: {self._imc:.3f}" if self._imc is not None else ""
         ]
         return "".join(components)
+
+# Exemplo de uso
+if __name__ == "__main__":
+    try:
+        jogador = Atacante("Ronaldo", 35, 1.83, 85)
+        print(jogador)
+        jogador.show_imc()
+        
+        # Testando setters
+        jogador.altura = 1.85
+        jogador.peso = 87
+        print("\nApós atualização:")
+        print(jogador)
+        jogador.show_imc()
+        
+        # Testando atribuição direta de IMC
+        jogador.imc = [90, 1.85]
+        print("\nApós definir IMC diretamente:")
+        print(jogador)
+        
+    except Exception as e:
+        print(f"Erro crítico: {e}")
