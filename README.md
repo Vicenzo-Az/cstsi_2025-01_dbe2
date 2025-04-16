@@ -8,4 +8,4 @@
 
 ## Descrição
 
-Repositório para ser postado as atividades desenvolvidas na matéria Desenvolvimento Back-End II, do 4o semestre do CSTSI.
+Repositório para ser postado o projeto desenvolvido na matéria Desenvolvimento Back-End II, do 4o semestre do CSTSI.
