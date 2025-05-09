@@ -1,10 +1,38 @@
-version: '3.9'
 
 services:
+  postgres:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER} 
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=projeto_tcc
+      - POSTGRES_HOST=${POSTGRES_HOST}
+    ports:
+      - "5433:5432" 
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - tsidbe
+
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "./wait-for-postgres.sh && python manage.py runserver 0.0.0.0:8000"    
     volumes:
       - .:/app
+    env_file:
+      - .env
+    networks:
+      - tsidbe
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+
+networks:
+    tsidbe:
+        driver: bridge
+
+volumes:
+  db:
+    name: projeto_tcc  
