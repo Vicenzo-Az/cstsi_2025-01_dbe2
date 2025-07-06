@@ -1,11 +1,261 @@
-# Desenvolvimento Back-End II
+# CSTSI_2025-01_DBE2
 
-- **Aluno**: Vicenzo Escobar de Azambuja
-- **Curso**: Curso Superior de Tecnologia em Sistema para Internet
-- **Professor**: Gill Velleda Gonzales
-- **Linguagem utilizada**: Python
-- **Framework utilizado**: Django
+## Índice
 
-## Descrição
+- [Visão Geral](#visão-geral)  
+- [Funcionalidades](#funcionalidades)  
+- [Tecnologias](#tecnologias)  
+- [Requisitos](#requisitos)  
+- [Instalação](#instalação)  
+- [Configuração de Variáveis de Ambiente](#configuração-de-variáveis-de-ambiente)  
+- [Execução com Docker](#execução-com-docker)  
+- [Estrutura do Projeto](#estrutura-do-projeto)  
+- [Modelos de Dados (Models)](#modelos-de-dados-models)  
+- [Serializadores (Serializers)](#serializadores-serializers)  
+- [Rotas e Endpoints](#rotas-e-endpoints)  
+- [Exemplos de Uso](#exemplos-de-uso)  
+- [Contribuição](#contribuição)  
+- [Licença](#licença)
 
-Repositório para ser postado o projeto desenvolvido na matéria Desenvolvimento Back-End II, do 4o semestre do CSTSI.
+---
+
+## Visão Geral
+
+Este repositório contém o projeto desenvolvido na disciplina **Desenvolvimento Back-End II** (4º semestre do CSTSI), ministrada pela Prof.ª Gill Velleda Gonzales.  
+Trata-se de uma **API REST** em **Django 5.2** + **Django REST Framework**, com autenticação via **JWT** (biblioteca `rest_framework_simplejwt`), destinada a gerenciar:
+
+- **DataSources** (fontes de dados externas, CSV, bancos etc.)
+- **Dashboards** (configurações de visualização de gráficos baseadas nas fontes)
+- **AnalysisReports** (relatórios analíticos, com possibilidade de geração por IA)
+
+---
+
+## Funcionalidades
+
+1. **CRUD** completo de DataSources, Dashboards e AnalysisReports  
+2. **Filtragem** dos recursos pelo usuário autenticado  
+3. Autenticação via **JWT** com endpoints para obtenção e refresh de tokens  
+4. Endpoint para retornar dados do usuário corrente (`/api/v1/auth/user/`)  
+5. Configuração de CORS para permitir chamadas de front‑ends (ex.: `localhost:3000`)  
+
+---
+
+## Tecnologias
+
+- **Linguagem**: Python 3.11  
+- **Framework**: Django 5.2, Django REST Framework  
+- **Autenticação**: `djangorestframework-simplejwt`  
+- **Banco de Dados**: PostgreSQL 14 (via Docker)  
+- **Containerização**: Docker & Docker Compose  
+- **Outros**: `python-dotenv`, `corsheaders`  
+
+---
+
+## Requisitos
+
+- Docker (>= 20.10)  
+- Docker Compose (>= 1.29)  
+- Variáveis de ambiente definidas em arquivo `.env` (veja seção abaixo)
+
+---
+
+## Instalação
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/Vicenzo-Az/cstsi_2025-01_dbe2.git
+   cd cstsi_2025-01_dbe2
+    ```
+
+2. Crie um arquivo `.env` na raiz (use o modelo abaixo).
+3. Execute com Docker Compose (próxima seção).
+
+---
+
+## Configuração de Variáveis de Ambiente
+
+No arquivo `.env`, defina:
+
+```env
+# Django
+SECRET_KEY=uma_chave_super_secreta
+
+# PostgreSQL
+POSTGRES_USER=seu_usuario
+POSTGRES_PASSWORD=sua_senha
+POSTGRES_HOST=postgres  # nome de serviço no docker-compose
+```
+
+---
+
+## Execução com Docker
+
+```bash
+# Cria e inicia containers de app e banco
+docker-compose up --build -d
+
+# Aguarda logs e verifica
+docker-compose logs -f web
+```
+
+- A API ficará disponível em `http://localhost:8000/`
+- Admin Django: `http://localhost:8000/admin/` (crie superusuário com `docker-compose exec web python manage.py createsuperuser`)
+
+Para parar e remover containers:
+
+```bash
+docker-compose down
+```
+
+---
+
+## Estrutura do Projeto
+
+```text
+├── api/                 # App Django “api”
+│   ├── models.py        # Modelos: DataSource, Dashboard, AnalysisReport
+│   ├── serializers.py   # Serializers DRF
+│   ├── views.py         # ViewSets e APIView
+│   └── urls.py          # Rotas do app api/v1/
+├── project/             # Configuração do projeto Django
+│   ├── settings.py      # Configurações gerais
+│   ├── urls.py          # URLs globais
+│   └── wsgi.py
+├── tcc/                 # App Django “tcc” (front‑end mínimo / landing)
+│   └── urls.py          # Páginas estáticas / templates
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── manage.py
+└── wait-for-postgres.sh
+```
+
+---
+
+## Modelos de Dados (Models)
+
+```python
+class DataSource(models.Model):
+    user = ForeignKey(User)
+    name = CharField(max_length=100)
+    source_type = CharField(choices=[('CSV','...'),('API','...'),('DB','...')])
+    connection_details = JSONField()
+    created_at = DateTimeField(auto_now_add=True)
+
+class Dashboard(models.Model):
+    user = ForeignKey(User)
+    name = CharField(max_length=100)
+    description = TextField(blank=True)
+    config = JSONField()           # Deve conter chave 'charts'
+    data_sources = ManyToManyField(DataSource)
+    created_at = DateTimeField(auto_now_add=True)
+
+class AnalysisReport(models.Model):
+    user = ForeignKey(User)
+    title = CharField(max_length=200)
+    content = TextField()
+    generated_by_ai = BooleanField(default=False)
+    data_sources = ManyToManyField(DataSource)
+    created_at = DateTimeField(auto_now_add=True)
+```
+
+---
+
+## Serializadores (Serializers)
+
+- **DataSourceSerializer**: valida `source_type`
+- **DashboardSerializer**: valida se `config` contém ao menos a chave `'charts'`
+- **AnalysisReportSerializer**
+
+---
+
+## Rotas e Endpoints
+
+| Método | Rota                        | Descrição                             |
+| ------ | --------------------------- | ------------------------------------- |
+| POST   | `/api/v1/token/`            | Obtém `access` e `refresh` tokens JWT |
+| POST   | `/api/v1/token/refresh/`    | Atualiza token a partir do `refresh`  |
+| GET    | `/api/v1/auth/user/`        | Dados do usuário autenticado          |
+| CRUD   | `/api/v1/data-sources/`     | Gerencia DataSources                  |
+| CRUD   | `/api/v1/dashboards/`       | Gerencia Dashboards                   |
+| CRUD   | `/api/v1/analysis-reports/` | Gerencia AnalysisReports              |
+
+> **Observação**: todos os endpoints de CRUD exigem cabeçalho `Authorization: Bearer <access_token>`.
+
+---
+
+## Exemplos de Uso
+
+### 1. Autenticação e obtenção de token
+
+```bash
+curl -X POST http://localhost:8000/api/v1/token/ \
+  -H "Content-Type: application/json" \
+  -d '{"username":"seu_usuario", "password":"sua_senha"}'
+```
+
+**Resposta**:
+
+```json
+{
+  "refresh": "...",
+  "access": "..."
+}
+```
+
+### 2. Criar um DataSource
+
+```bash
+curl -X POST http://localhost:8000/api/v1/data-sources/ \
+  -H "Authorization: Bearer <access>" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "Minha API Externa",
+        "source_type": "API",
+        "connection_details": {
+          "url": "https://api.exemplo.com/data",
+          "api_key": "abcdef12345"
+        }
+      }'
+```
+
+### 3. Listar Dashboards
+
+```bash
+curl -X GET http://localhost:8000/api/v1/dashboards/ \
+  -H "Authorization: Bearer <access>"
+```
+
+---
+
+## Contribuição
+
+1. Faça um *fork* deste repositório
+2. Crie uma *branch* feature/bugfix:
+
+   ```bash
+   git checkout -b feature/nova-funcionalidade
+   ```
+
+3. Commit suas alterações e abra um *pull request*
+4. Aguarde revisão
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para detalhes.
+
+---
+
+Esse README reúne:
+
+- Contexto e motivação do projeto  
+- Requisitos e instruções de instalação  
+- Fluxo completo de execução via Docker  
+- Descrição detalhada da API (modelos, serializers, endpoints)  
+- Exemplos de uso com `curl`  
+- Guia de contribuição e licença  
+
+Fique à vontade para ajustar estilos, adicionar badges (build, coverage etc.) e qualquer informação extra que enriqueça a documentação.
