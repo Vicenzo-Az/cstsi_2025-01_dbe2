@@ -248,14 +248,3 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para detalhes.
 
 ---
-
-Esse README reúne:
-
-- Contexto e motivação do projeto  
-- Requisitos e instruções de instalação  
-- Fluxo completo de execução via Docker  
-- Descrição detalhada da API (modelos, serializers, endpoints)  
-- Exemplos de uso com `curl`  
-- Guia de contribuição e licença  
-
-Fique à vontade para ajustar estilos, adicionar badges (build, coverage etc.) e qualquer informação extra que enriqueça a documentação.
