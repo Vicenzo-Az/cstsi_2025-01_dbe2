@@ -194,7 +194,7 @@ class AnalysisReport(models.Model):
 - **Testes**: rodar com `pytest`, apontando para `settings_test`:
 
   ```bash
-  pytest --settings=api.settings_test
+  pytest
   ```
 
 ---
@@ -205,7 +205,7 @@ Para popular o banco com dados de teste, use o comando customizado `seed`:
 
 ```bash
 # Usando settings de teste (SQLite em memória)
-python manage.py seed --settings=api.settings_test \
+python manage.py seed --settings=project.settings_test \
     --users 10 \
     --datasources-per-user 4 \
     --dashboards-per-user 3 \
