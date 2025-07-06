@@ -13,6 +13,9 @@
 - [Modelos de Dados (Models)](#modelos-de-dados-models)  
 - [Serializadores (Serializers)](#serializadores-serializers)  
 - [Rotas e Endpoints](#rotas-e-endpoints)  
+- [Factories e Testes](#factories-e-testes)
+- [Seeders](#seeders)
+
 - [Exemplos de Uso](#exemplos-de-uso)  
 - [Licença](#licença)
 
@@ -20,7 +23,7 @@
 
 ## Visão Geral
 
-Este repositório contém o projeto desenvolvido na disciplina **Desenvolvimento Back-End II** (4º semestre do CSTSI), ministrada pela Prof.ª Gill Velleda Gonzales.  
+Este repositório contém o projeto desenvolvido na disciplina **Desenvolvimento Back-End II** (4º semestre do CSTSI), ministrada pela Prof. Gill Velleda Gonzales.
 Trata-se de uma **API REST** em **Django 5.2** + **Django REST Framework**, com autenticação via **JWT** (biblioteca `rest_framework_simplejwt`), destinada a gerenciar:
 
 - **DataSources** (fontes de dados externas, CSV, bancos etc.)
@@ -31,11 +34,11 @@ Trata-se de uma **API REST** em **Django 5.2** + **Django REST Framework**, com 
 
 ## Funcionalidades
 
-1. **CRUD** completo de DataSources, Dashboards e AnalysisReports  
-2. **Filtragem** dos recursos pelo usuário autenticado  
-3. Autenticação via **JWT** com endpoints para obtenção e refresh de tokens  
-4. Endpoint para retornar dados do usuário corrente (`/api/v1/auth/user/`)  
-5. Configuração de CORS para permitir chamadas de front‑ends (ex.: `localhost:3000`)  
+1. **CRUD** completo de DataSources, Dashboards e AnalysisReports
+2. **Filtragem** dos recursos pelo usuário autenticado
+3. Autenticação via **JWT** com endpoints para obtenção e refresh de tokens
+4. Endpoint para retornar dados do usuário corrente (`/api/v1/auth/user/`)
+5. Configuração de CORS para permitir chamadas de front‑ends (ex.: `localhost:3000`)
 
 ---
 
@@ -113,6 +116,7 @@ docker-compose down
 
 ```text
 ├── api/                 # App Django “api”
+│   ├── factories.py     # Factories para testes
 │   ├── models.py        # Modelos: DataSource, Dashboard, AnalysisReport
 │   ├── serializers.py   # Serializers DRF
 │   ├── views.py         # ViewSets e APIView
@@ -184,6 +188,41 @@ class AnalysisReport(models.Model):
 
 ---
 
+## Factories e Testes
+
+- **Factories**: em `api/factories.py`, usando `factory_boy` e `faker`. São usadas para gerar instâncias de teste.
+- **Testes**: rodar com `pytest`, apontando para `settings_test`:
+
+  ```bash
+  pytest --settings=api.settings_test
+  ```
+
+---
+
+## Seeders
+
+Para popular o banco com dados de teste, use o comando customizado `seed`:
+
+```bash
+# Usando settings de teste (SQLite em memória)
+python manage.py seed --settings=api.settings_test \
+    --users 10 \
+    --datasources-per-user 4 \
+    --dashboards-per-user 3 \
+    --reports-per-user 2
+```
+
+Valores padrão (sem flags):
+
+- `--users`: 5
+- `--datasources-per-user`: 3
+- `--dashboards-per-user`: 2
+- `--reports-per-user`: 1
+
+O comando aplica migrations automaticamente antes de semear, garantindo tabelas atualizadas.
+
+---
+
 ## Exemplos de Uso
 
 ### 1. Autenticação e obtenção de token
@@ -231,5 +270,3 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 ## Licença
 
 Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para detalhes.
-
----
