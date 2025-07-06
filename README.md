@@ -14,7 +14,6 @@
 - [Serializadores (Serializers)](#serializadores-serializers)  
 - [Rotas e Endpoints](#rotas-e-endpoints)  
 - [Exemplos de Uso](#exemplos-de-uso)  
-- [Contribuição](#contribuição)  
 - [Licença](#licença)
 
 ---
@@ -226,20 +225,6 @@ curl -X POST http://localhost:8000/api/v1/data-sources/ \
 curl -X GET http://localhost:8000/api/v1/dashboards/ \
   -H "Authorization: Bearer <access>"
 ```
-
----
-
-## Contribuição
-
-1. Faça um *fork* deste repositório
-2. Crie uma *branch* feature/bugfix:
-
-   ```bash
-   git checkout -b feature/nova-funcionalidade
-   ```
-
-3. Commit suas alterações e abra um *pull request*
-4. Aguarde revisão
 
 ---
 
