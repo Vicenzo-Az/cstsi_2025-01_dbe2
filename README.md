@@ -15,9 +15,7 @@
 - [Rotas e Endpoints](#rotas-e-endpoints)  
 - [Factories e Testes](#factories-e-testes)
 - [Seeders](#seeders)
-
 - [Exemplos de Uso](#exemplos-de-uso)  
-- [Licença](#licença)
 
 ---
 
@@ -264,9 +262,3 @@ curl -X POST http://localhost:8000/api/v1/data-sources/ \
 curl -X GET http://localhost:8000/api/v1/dashboards/ \
   -H "Authorization: Bearer <access>"
 ```
-
----
-
-## Licença
-
-Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para detalhes.
