@@ -10,7 +10,7 @@
 - [Configuração de Variáveis de Ambiente](#configuração-de-variáveis-de-ambiente)  
 - [Execução com Docker](#execução-com-docker)  
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Documentação da API](#documentação-da-api-drf-spectacular)
+- [Documentação da API](#documentação-da-api)
 - [Modelos de Dados (Models)](#modelos-de-dados-models)  
 - [Serializadores (Serializers)](#serializadores-serializers)  
 - [Rotas e Endpoints](#rotas-e-endpoints)  
