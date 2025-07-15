@@ -9,7 +9,8 @@
 - [Instalação](#instalação)  
 - [Configuração de Variáveis de Ambiente](#configuração-de-variáveis-de-ambiente)  
 - [Execução com Docker](#execução-com-docker)  
-- [Estrutura do Projeto](#estrutura-do-projeto)  
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Documentação da API](#documentação-da-api-drf-spectacular)
 - [Modelos de Dados (Models)](#modelos-de-dados-models)  
 - [Serializadores (Serializers)](#serializadores-serializers)  
 - [Rotas e Endpoints](#rotas-e-endpoints)  
@@ -134,7 +135,7 @@ docker-compose down
 
 ---
 
-## 📄 Documentação da API (drf-spectacular)
+## Documentação da API
 
 Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para gerar uma spec OpenAPI 3 e disponibilizar uma UI Swagger interativa e um ReDoc do projeto.
 
@@ -155,11 +156,12 @@ Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para
 1. Clique em **Authorize** na Swagger‑UI.  
 2. Informe seu token JWT no formato:
 
-```markdown
-Bearer <seu-token>
-```
-
+  ```markdown
+  Bearer <seu-token>
+  ```
+<!-- markdownlint-disable MD029 -->
 3. Pronto: agora é possível testar endpoints protegidos diretamente na interface.
+<!-- markdownlint-enable MD029 -->
 
 ---
 
