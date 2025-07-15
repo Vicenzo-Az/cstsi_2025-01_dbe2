@@ -134,6 +134,52 @@ docker-compose down
 
 ---
 
+```markdown
+---
+
+## 📄 Documentação com Swagger (drf-spectacular)
+
+Para facilitar o consumo e teste da API, adicionamos **drf-spectacular** para gerar uma spec OpenAPI 3 e disponibilizar uma UI Swagger interativa.
+
+Desculpe por isso. Segue apenas o trecho em Markdown que você deve colar ao final do seu `README.md`, sem usar lousa:
+
+````markdown
+---
+
+```markdown
+---
+
+## 📄 Documentação da API (drf-spectacular)
+
+Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para gerar uma spec OpenAPI 3 e disponibilizar uma UI Swagger interativa e um ReDoc do projeto.
+
+- **Swagger‑UI**  
+  Acesse: `http://localhost:8000/api/v1/docs/swagger/`  
+  → Interface interativa para navegar pelos endpoints e testar requisições.
+
+- **ReDoc**  
+  Acesse: `http://localhost:8000/api/v1/docs/redoc/`  
+  → Visualização limpa e estruturada da spec OpenAPI 3.
+
+- **Esquema OpenAPI (JSON)**  
+  Para integração com ferramentas ou geração de SDKs:  
+```
+
+GET [http://localhost:8000/schema/](http://localhost:8000/schema/)
+
+### Autenticação
+
+1. Clique em **Authorize** na Swagger‑UI.  
+2. Informe seu token JWT no formato:
+
+```markdown
+Bearer <seu-token>
+```
+
+3. Pronto: agora é possível testar endpoints protegidos diretamente na interface.
+
+---
+
 ## Modelos de Dados (Models)
 
 ```python
