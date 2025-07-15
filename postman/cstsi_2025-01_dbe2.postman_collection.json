@@ -66,11 +66,35 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTM4NjYzLCJpYXQiOjE3NTI1Mzc3NjMsImp0aSI6Ijc2Yzc4NTU0ZDJjYTQ0ZTQ5YzNmZTllZTUyODdjNDdjIiwidXNlcl9pZCI6MX0.WUfuwE3SnqIQU-I2yT1Yd2V0Rmqm8xGqiXdSLwa8kYQ"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTg5OTQwLCJpYXQiOjE3NTI1ODkwNDAsImp0aSI6IjdjYWQ3YzI3MGRmZTQ0NWM4ZWRhZjlmN2MyOGJhZWFjIiwidXNlcl9pZCI6MX0.w8oKqQVse2iaXrXXqKjjKwUkzLWKPngRyoiQMVup7u4"
 					}
 				},
 				"method": "GET",
 				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/auth/user/"
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTg2ODkyLCJpYXQiOjE3NTI1ODU5OTIsImp0aSI6IjMwYjlhNzdmZWFiNTRkYTlhMDA2NGI2NTVlZTRhNTNiIiwidXNlcl9pZCI6MX0.Rk60nwTg5JzxyzTHUuW7jo0hH8PDjko9_oPdBMrURB4"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"username\": \"vicenzo\",\r\n    \"email\": \"\",\r\n    \"first_name\": \"vicenzo\",\r\n    \"last_name\": \"azambuja\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": "http://127.0.0.1:8000/api/v1/auth/user/"
 			},
 			"response": []
@@ -141,7 +165,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTM4NDU0LCJpYXQiOjE3NTI1Mzc1NTQsImp0aSI6IjBlOWRiYzI3YjNmNDRjMGI4ZGYyZjcxN2QyOWVlY2IxIiwidXNlcl9pZCI6MX0.mt6PYq8ks0FFC5URa4TDEYJft3nJn2rmJRpaubl2iXI"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyNTg0ODUyLCJpYXQiOjE3NTI1ODM5NTIsImp0aSI6IjhiZDczMThkYWI2NzRiOWZhNWJmMWIyOTVkOWI2MjJlIiwidXNlcl9pZCI6MX0.WLI5mHFYa2uqrXo6CApBtZ1erOCV1T6OLxsYOSeyRgI"
 					}
 				},
 				"method": "GET",
