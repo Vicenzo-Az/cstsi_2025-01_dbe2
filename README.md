@@ -149,7 +149,7 @@ Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para
 
 - **Esquema OpenAPI (JSON)**  
   Para integração com ferramentas ou geração de SDKs:
-  → GET [http://localhost:8000/schema/](http://localhost:8000/schema/)
+  → GET [http://localhost:8000/api/v1/schema/](http://localhost:8000/api/v1/schema/)
 
 ### Autenticação
 
