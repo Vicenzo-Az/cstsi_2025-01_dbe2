@@ -134,21 +134,6 @@ docker-compose down
 
 ---
 
-```markdown
----
-
-## 📄 Documentação com Swagger (drf-spectacular)
-
-Para facilitar o consumo e teste da API, adicionamos **drf-spectacular** para gerar uma spec OpenAPI 3 e disponibilizar uma UI Swagger interativa.
-
-Desculpe por isso. Segue apenas o trecho em Markdown que você deve colar ao final do seu `README.md`, sem usar lousa:
-
-````markdown
----
-
-```markdown
----
-
 ## 📄 Documentação da API (drf-spectacular)
 
 Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para gerar uma spec OpenAPI 3 e disponibilizar uma UI Swagger interativa e um ReDoc do projeto.
@@ -162,10 +147,8 @@ Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para
   → Visualização limpa e estruturada da spec OpenAPI 3.
 
 - **Esquema OpenAPI (JSON)**  
-  Para integração com ferramentas ou geração de SDKs:  
-```
-
-GET [http://localhost:8000/schema/](http://localhost:8000/schema/)
+  Para integração com ferramentas ou geração de SDKs:
+  → GET [http://localhost:8000/schema/](http://localhost:8000/schema/)
 
 ### Autenticação
 
