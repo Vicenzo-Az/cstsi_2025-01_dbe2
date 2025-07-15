@@ -1,8 +1,8 @@
 # api/views.py
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, generics, permissions
 from .models import DataSource, Dashboard, AnalysisReport
-from .serializers import DataSourceSerializer, DashboardSerializer, AnalysisReportSerializer
+from .serializers import DataSourceSerializer, DashboardSerializer, AnalysisReportSerializer, UserSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -36,14 +36,14 @@ class AnalysisReportViewSet(viewsets.ModelViewSet):
         return self.queryset.filter(user=self.request.user)
 
 
-class CurrentUserView(APIView):
-    permission_classes = [IsAuthenticated]
+class CurrentUserView(generics.RetrieveUpdateAPIView):
+    """
+    GET: retorna os dados do usuário autenticado
+    PUT/PATCH: atualiza os campos permitidos do usuário
+    """
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-    def get(self, request):
-        return Response({
-            'id': request.user.id,
-            'username': request.user.username,
-            'email': request.user.email,
-            'name': f"{request.user.first_name} {request.user.last_name}",
-            'role': 'admin' if request.user.is_staff else 'user'
-        })
+    def get_object(self):
+        # sempre opera sobre o self.request.user
+        return self.request.user
