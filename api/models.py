@@ -1,8 +1,6 @@
 # api/models.py
+from django.conf import settings
 from django.db import models
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
 
 
 class DataSource(models.Model):
@@ -12,7 +10,8 @@ class DataSource(models.Model):
         ('DB', 'Banco de Dados'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     source_type = models.CharField(max_length=3, choices=SOURCE_TYPES)
     # Ex: { "url": "...", "api_key": "..." }
@@ -21,7 +20,8 @@ class DataSource(models.Model):
 
 
 class Dashboard(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     config = models.JSONField()  # Configuração dos gráficos/filtros
@@ -30,7 +30,8 @@ class Dashboard(models.Model):
 
 
 class AnalysisReport(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     content = models.TextField()
     generated_by_ai = models.BooleanField(
