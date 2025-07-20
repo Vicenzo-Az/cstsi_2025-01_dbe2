@@ -2,7 +2,14 @@
 from django.shortcuts import render
 from rest_framework import viewsets, generics, permissions
 from .models import DataSource, Dashboard, AnalysisReport
-from .serializers import DataSourceSerializer, DashboardSerializer, AnalysisReportSerializer, UserSerializer
+from .serializers import (
+    DataSourceSerializer,
+    DashboardSerializer,
+    AnalysisReportSerializer,
+    UserSerializer,
+    SignupSerializer,
+    ChangePasswordSerializer
+)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -46,4 +53,26 @@ class CurrentUserView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         # sempre opera sobre o self.request.user
+        return self.request.user
+
+
+class SignupView(generics.CreateAPIView):
+    """
+    POST /api/v1/auth/signup/
+    Cria um novo usuário.
+    """
+    serializer_class = SignupSerializer
+    permission_classes = [permissions.AllowAny]
+
+
+class ChangePasswordView(generics.UpdateAPIView):
+    """
+    PUT /api/v1/auth/password/change/
+    Atualiza a senha do usuário logado.
+    """
+    serializer_class = ChangePasswordSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        # retorna o próprio usuário
         return self.request.user
