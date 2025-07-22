@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
+from urllib.parse import urlparse
 
 
 load_dotenv()
@@ -102,16 +103,21 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # }
 
 # Production database
+
+url = urlparse(os.environ.get('JAWSDB_URL'))
+
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_DATABASE'),
-        'USER': os.getenv('DB_USERNAME'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE':   'django.db.backends.mysql',
+        'NAME':     url.path[1:],
+        'USER':     url.username,
+        'PASSWORD': url.password,
+        'HOST':     url.hostname,
+        'PORT':     url.port or '3306',
+        'OPTIONS':  {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
