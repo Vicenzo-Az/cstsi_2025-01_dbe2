@@ -150,6 +150,8 @@ Para facilitar o consumo e teste da API, foi adicionado **drf-spectacular** para
 - **Esquema OpenAPI (JSON)**  
   Para integração com ferramentas ou geração de SDKs:
   → GET [http://localhost:8000/api/v1/schema/](http://localhost:8000/api/v1/schema/)
+  
+---
 
 ### Autenticação
 
@@ -199,6 +201,9 @@ class AnalysisReport(models.Model):
 - **DataSourceSerializer**: valida `source_type`
 - **DashboardSerializer**: valida se `config` contém ao menos a chave `'charts'`
 - **AnalysisReportSerializer**
+- **UserSerializer**
+- **SignupSerializer**
+- **ChangePasswordSerializer**
 
 ---
 
@@ -293,3 +298,19 @@ curl -X POST http://localhost:8000/api/v1/data-sources/ \
 curl -X GET http://localhost:8000/api/v1/dashboards/ \
   -H "Authorization: Bearer <access>"
 ```
+
+---
+
+## TODO
+
+- ADICIONAR USUÁRIO PADRÃO POSTGRES
+
+- json rodando
+- exportar postman atulizado
+
+- mostrar como criar usuario
+
+- ~deploy no heroku~
+
+- ~signup~
+- fix CRUD

@@ -192,7 +192,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'DataLoop  API',
+    'TITLE': 'Coffebase  API',
     'DESCRIPTION': 'API for integrating, processing, and analyzing business data with interactive reports and AI insights',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
