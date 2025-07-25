@@ -17,6 +17,7 @@
 - [Factories e Testes](#factories-e-testes)
 - [Seeders](#seeders)
 - [Exemplos de Uso](#exemplos-de-uso)  
+- [Deploy com Heroku](#deploy-com-heroku)
 
 ---
 
@@ -301,7 +302,7 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 
 ---
 
-### Deploy com Heroku
+## Deploy com Heroku
 
 - Base
 
@@ -315,6 +316,6 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 
 [https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger/](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger/)
 
-- Redoc 
+- Redoc
 
 [https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/redoc/](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/redoc/)
