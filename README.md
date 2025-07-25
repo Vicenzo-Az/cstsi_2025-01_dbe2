@@ -306,10 +306,10 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 - Base
 [cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com](cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com)
 
--API
+- API
 [https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1)
 
--Swagger
+- Swagger
 [https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger)
 
 ---
