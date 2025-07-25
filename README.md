@@ -318,12 +318,12 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 
 - ADICIONAR USUÁRIO PADRÃO POSTGRES
 
-- json rodando
-- exportar postman atulizado
+- ~exportar postman atulizado~
 
 - mostrar como criar usuario
 
 - ~deploy no heroku~
 
 - ~signup~
-- fix CRUD
+
+- ~fix CRUD~
