@@ -301,29 +301,20 @@ curl -X GET http://localhost:8000/api/v1/dashboards/ \
 
 ---
 
-### LINK HEROKU
+### Deploy com Heroku
 
 - Base
+
 [https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com)
 
 - API
-[https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1)
+
+[https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/)
 
 - Swagger
-[https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger)
 
----
+[https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger/](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/swagger/)
 
-## TODO
+- Redoc 
 
-- ADICIONAR USUÁRIO PADRÃO POSTGRES
-
-- ~exportar postman atulizado~
-
-- mostrar como criar usuario
-
-- ~deploy no heroku~
-
-- ~signup~
-
-- ~fix CRUD~
+[https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/redoc/](https://cstsi-2025-01-dbe2-3ae47cf2d2f0.herokuapp.com/api/v1/docs/redoc/)
