@@ -24,6 +24,9 @@ class DataSourceViewSet(viewsets.ModelViewSet):
         # Filtra apenas os dados do usuário logado
         return self.queryset.filter(user=self.request.user)
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)  # Define o usuário logado
+
 
 class DashboardViewSet(viewsets.ModelViewSet):
     queryset = Dashboard.objects.all()
