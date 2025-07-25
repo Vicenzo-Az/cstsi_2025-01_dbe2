@@ -33,6 +33,10 @@ class DashboardViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)
 
+    def perform_create(self, serializer):
+        # Garante que o owner (user) seja sempre o usuário logado
+        serializer.save(user=self.request.user)
+
 
 class AnalysisReportViewSet(viewsets.ModelViewSet):
     queryset = AnalysisReport.objects.all()
