@@ -30,13 +30,13 @@ MEDIA_URL = '/media/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-para-local')
+SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-para-local')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -96,31 +96,31 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Development database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'projeto_tcc',
-#         'USER': os.getenv('POSTGRES_USER'),
-#         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-#         'HOST': os.getenv('POSTGRES_HOST'),
-#         'PORT': '5432',
-#     }
-# }
-
-# Production database
-url = urlparse(os.environ.get('JAWSDB_URL'))
-
 DATABASES = {
     'default': {
-        'ENGINE':   'django.db.backends.mysql',
-        'NAME':     url.path[1:],
-        'USER':     url.username,
-        'PASSWORD': url.password,
-        'HOST':     url.hostname,
-        'PORT':     url.port or '3306',
-        'OPTIONS':  {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'projeto_tcc',
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': '5432',
     }
 }
+
+# Production database
+# url = urlparse(os.environ.get('JAWSDB_URL'))
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':   'django.db.backends.mysql',
+#         'NAME':     url.path[1:],
+#         'USER':     url.username,
+#         'PASSWORD': url.password,
+#         'HOST':     url.hostname,
+#         'PORT':     url.port or '3306',
+#         'OPTIONS':  {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+#     }
+# }
 
 
 # Password validation
