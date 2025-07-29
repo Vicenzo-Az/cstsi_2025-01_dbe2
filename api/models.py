@@ -38,3 +38,22 @@ class AnalysisReport(models.Model):
         default=False)  # Se o relatório foi gerado por IA
     data_sources = models.ManyToManyField(DataSource)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class Documento(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=200)
+    arquivo = models.FileField(
+        upload_to='uploads/documentos/',  # pasta no MEDIA_ROOT
+        null=True,
+        blank=True
+    )
+    imagem = models.ImageField(
+        upload_to='uploads/imagens/',
+        null=True,
+        blank=True
+    )
+
+    def __str__(self):
+        return self.titulo

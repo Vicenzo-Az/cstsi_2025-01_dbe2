@@ -1,14 +1,16 @@
 # api/views.py
 from django.shortcuts import render
 from rest_framework import viewsets, generics, permissions
-from .models import DataSource, Dashboard, AnalysisReport
+from rest_framework.parsers import MultiPartParser, FormParser
+from .models import DataSource, Dashboard, AnalysisReport, Documento
 from .serializers import (
     DataSourceSerializer,
     DashboardSerializer,
     AnalysisReportSerializer,
     UserSerializer,
     SignupSerializer,
-    ChangePasswordSerializer
+    ChangePasswordSerializer,
+    DocumentoSerializer
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
@@ -83,3 +85,9 @@ class ChangePasswordView(generics.UpdateAPIView):
     def get_object(self):
         # retorna o próprio usuário
         return self.request.user
+
+
+class DocumentoViewSet(viewsets.ModelViewSet):
+    queryset = Documento.objects.all()
+    serializer_class = DocumentoSerializer
+    parser_classes = (MultiPartParser, FormParser)

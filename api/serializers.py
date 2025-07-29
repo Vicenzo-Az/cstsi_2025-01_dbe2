@@ -1,6 +1,6 @@
 # api/serializers.py
 from rest_framework import serializers
-from .models import DataSource, Dashboard, AnalysisReport
+from .models import DataSource, Dashboard, AnalysisReport, Documento
 from django.conf import settings
 from django.contrib.auth import get_user_model
 
@@ -87,3 +87,9 @@ class ChangePasswordSerializer(serializers.Serializer):
         instance.set_password(validated_data['new_password'])
         instance.save()
         return instance
+
+
+class DocumentoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Documento
+        fields = ['id', 'titulo', 'arquivo', 'imagem']

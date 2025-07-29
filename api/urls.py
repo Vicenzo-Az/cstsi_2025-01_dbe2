@@ -7,7 +7,8 @@ from .views import (
     AnalysisReportViewSet,
     CurrentUserView,
     SignupView,
-    ChangePasswordView
+    ChangePasswordView,
+    DocumentoViewSet
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
@@ -17,6 +18,7 @@ router = DefaultRouter()
 router.register(r'data-sources', DataSourceViewSet)
 router.register(r'dashboards', DashboardViewSet)
 router.register(r'analysis-reports', AnalysisReportViewSet)
+router.register(r'documentos', DocumentoViewSet, basename='documento')
 
 urlpatterns = [
     path('', include(router.urls)),

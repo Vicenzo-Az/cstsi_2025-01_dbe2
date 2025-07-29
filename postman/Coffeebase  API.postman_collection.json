@@ -1458,7 +1458,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{TOKEN}}"
 											}
 										},
 										"method": "POST",
@@ -1474,7 +1474,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"config\": {},\n  \"data_sources\": [\n    -39225280,\n    51066006\n  ],\n  \"name\": \"dolor cupidatat Duis\",\n  \"description\": \"adipisicing nulla sunt e\"\n}",
+											"raw": "{\n    \"name\": \"Analise de Vendas\",\n    \"config\": {\n        \"charts\": [              // Campo obrigatório por validação\n            {\"type\": \"bar\"}\n        ]\n    },\n    \"data_sources\": [4]       // IDs de fontes válidas\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2210,6 +2210,2788 @@
 											],
 											"cookie": [],
 											"body": "{\n  \"access\": \"dolor pariatur laboris\",\n  \"refresh\": \"aliqua id sit reprehenderit\",\n  \"password\": \"amet mollit laboris occaecat\",\n  \"username\": 10581996\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v2",
+					"item": [
+						{
+							"name": "analysis-reports",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "analysis reports retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"analysis-reports",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this analysis report."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"analysis-reports",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    6559,\n    6730\n  ],\n  \"id\": 777,\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}"
+												}
+											]
+										},
+										{
+											"name": "analysis reports update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    8578,\n    8458\n  ],\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"analysis-reports",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this analysis report."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    8578,\n    8458\n  ],\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"analysis-reports",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    6559,\n    6730\n  ],\n  \"id\": 777,\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}"
+												}
+											]
+										},
+										{
+											"name": "analysis reports partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"generated_by_ai\": false,\n  \"data_sources\": [\n    6162,\n    7358\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"analysis-reports",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this analysis report."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"generated_by_ai\": false,\n  \"data_sources\": [\n    6162,\n    7358\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"analysis-reports",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    6559,\n    6730\n  ],\n  \"id\": 777,\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}"
+												}
+											]
+										},
+										{
+											"name": "analysis reports destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"analysis-reports",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this analysis report."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/analysis-reports/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"analysis-reports",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "analysis reports list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/analysis-reports/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/analysis-reports/"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"content\": \"string\",\n    \"data_sources\": [\n      89,\n      5141\n    ],\n    \"id\": 8180,\n    \"title\": \"string\",\n    \"generated_by_ai\": false\n  },\n  {\n    \"content\": \"string\",\n    \"data_sources\": [\n      6470,\n      6429\n    ],\n    \"id\": 5406,\n    \"title\": \"string\",\n    \"generated_by_ai\": true\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "analysis reports create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    8578,\n    8458\n  ],\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/analysis-reports/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    8578,\n    8458\n  ],\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/analysis-reports/"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": \"string\",\n  \"data_sources\": [\n    6559,\n    6730\n  ],\n  \"id\": 777,\n  \"title\": \"string\",\n  \"generated_by_ai\": false\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "password",
+									"item": [
+										{
+											"name": "change",
+											"item": [
+												{
+													"name": "auth password change update",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"new_password\": \"string\",\n  \"old_password\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/auth/password/change/",
+														"description": "PUT /api/v1/auth/password/change/\nAtualiza a senha do usuário logado."
+													},
+													"response": [
+														{
+															"name": "Untitled Response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"new_password\": \"string\",\n  \"old_password\": \"string\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/auth/password/change/"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"new_password\": 3018,\n  \"old_password\": true\n}"
+														}
+													]
+												},
+												{
+													"name": "auth password change partial update",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"old_password\": \"string\",\n  \"new_password\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/auth/password/change/",
+														"description": "PUT /api/v1/auth/password/change/\nAtualiza a senha do usuário logado."
+													},
+													"response": [
+														{
+															"name": "Untitled Response",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"old_password\": \"string\",\n  \"new_password\": \"string\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/auth/password/change/"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"new_password\": 3018,\n  \"old_password\": true\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "signup",
+									"item": [
+										{
+											"name": "auth signup create",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"2arvPb@meQGaZewhWcPmuTrqFvKzPHedeNtW.vnf\",\n  \"password\": \"string\",\n  \"username\": \"0CDH\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/auth/signup/",
+												"description": "POST /api/v1/auth/signup/\nCria um novo usuário."
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"2arvPb@meQGaZewhWcPmuTrqFvKzPHedeNtW.vnf\",\n  \"password\": \"string\",\n  \"username\": \"0CDH\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/auth/signup/"
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"email\": \"bfeXgwdNDZ@RFUXbBsvCByVKcgRPRekEhFJLWzgNRjDj.vzn\",\n  \"id\": 2554,\n  \"username\": \"k9hyvXMZ-\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "user",
+									"item": [
+										{
+											"name": "auth user retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/auth/user/",
+												"description": "GET: retorna os dados do usuário autenticado\nPUT/PATCH: atualiza os campos permitidos do usuário"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": "{{baseUrl}}/api/v1/auth/user/"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"email\": \"DyJ@hjjirfeLQYTBYuitQQnfhLCAjRSYi.krs\",\n  \"id\": 1752,\n  \"username\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "auth user update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"0VU9Zx372x2@k.tbhc\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/auth/user/",
+												"description": "GET: retorna os dados do usuário autenticado\nPUT/PATCH: atualiza os campos permitidos do usuário"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"0VU9Zx372x2@k.tbhc\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/auth/user/"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"email\": \"DyJ@hjjirfeLQYTBYuitQQnfhLCAjRSYi.krs\",\n  \"id\": 1752,\n  \"username\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "auth user partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"uU1lcPRqwH-u@sQk.zsl\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/auth/user/",
+												"description": "GET: retorna os dados do usuário autenticado\nPUT/PATCH: atualiza os campos permitidos do usuário"
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"uU1lcPRqwH-u@sQk.zsl\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/auth/user/"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"email\": \"DyJ@hjjirfeLQYTBYuitQQnfhLCAjRSYi.krs\",\n  \"id\": 1752,\n  \"username\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "dashboards",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "dashboards retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dashboards",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this dashboard."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"dashboards",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"config\": {},\n  \"data_sources\": [\n    7706,\n    4604\n  ],\n  \"id\": 9557,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "dashboards update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"config\": {},\n  \"data_sources\": [\n    7513,\n    2059\n  ],\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dashboards",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this dashboard."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"config\": {},\n  \"data_sources\": [\n    7513,\n    2059\n  ],\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"dashboards",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"config\": {},\n  \"data_sources\": [\n    7706,\n    4604\n  ],\n  \"id\": 9557,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "dashboards partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"config\": {},\n  \"data_sources\": [\n    4700,\n    2230\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dashboards",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this dashboard."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"config\": {},\n  \"data_sources\": [\n    4700,\n    2230\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"dashboards",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"config\": {},\n  \"data_sources\": [\n    7706,\n    4604\n  ],\n  \"id\": 9557,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+												}
+											]
+										},
+										{
+											"name": "dashboards destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"dashboards",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this dashboard."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/dashboards/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"dashboards",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "dashboards list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/dashboards/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/dashboards/"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"config\": {},\n    \"data_sources\": [\n      1154,\n      6687\n    ],\n    \"id\": 4753,\n    \"name\": \"string\",\n    \"description\": \"string\"\n  },\n  {\n    \"config\": {},\n    \"data_sources\": [\n      385,\n      6609\n    ],\n    \"id\": 7685,\n    \"name\": \"string\",\n    \"description\": \"string\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "dashboards create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"config\": {},\n  \"data_sources\": [\n    7513,\n    2059\n  ],\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/dashboards/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"config\": {},\n  \"data_sources\": [\n    7513,\n    2059\n  ],\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/dashboards/"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"config\": {},\n  \"data_sources\": [\n    7706,\n    4604\n  ],\n  \"id\": 9557,\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "data-sources",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "data sources retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"data-sources",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this data source."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"data-sources",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"connection_details\": {},\n  \"id\": 3627,\n  \"name\": \"str\",\n  \"source_type\": \"DB\"\n}"
+												}
+											]
+										},
+										{
+											"name": "data sources update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"connection_details\": {},\n  \"name\": \"string\",\n  \"source_type\": \"CSV\",\n  \"id\": true\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"data-sources",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this data source."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"connection_details\": {},\n  \"name\": \"string\",\n  \"source_type\": \"CSV\",\n  \"id\": true\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"data-sources",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"connection_details\": {},\n  \"id\": 3627,\n  \"name\": \"str\",\n  \"source_type\": \"DB\"\n}"
+												}
+											]
+										},
+										{
+											"name": "data sources partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"string\",\n  \"source_type\": \"DB\",\n  \"connection_details\": {}\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"data-sources",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this data source."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"string\",\n  \"source_type\": \"DB\",\n  \"connection_details\": {}\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"data-sources",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"connection_details\": {},\n  \"id\": 3627,\n  \"name\": \"str\",\n  \"source_type\": \"DB\"\n}"
+												}
+											]
+										},
+										{
+											"name": "data sources destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"data-sources",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this data source."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/data-sources/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"data-sources",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "data sources list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/data-sources/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/data-sources/"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"connection_details\": {},\n    \"id\": 9524,\n    \"name\": \"string\",\n    \"source_type\": \"DB\"\n  },\n  {\n    \"connection_details\": {},\n    \"id\": 5751,\n    \"name\": \"string\",\n    \"source_type\": \"API\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "data sources create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"connection_details\": {},\n  \"name\": \"string\",\n  \"source_type\": \"CSV\",\n  \"id\": true\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/data-sources/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"connection_details\": {},\n  \"name\": \"string\",\n  \"source_type\": \"CSV\",\n  \"id\": true\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/data-sources/"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"connection_details\": {},\n  \"id\": 3627,\n  \"name\": \"str\",\n  \"source_type\": \"DB\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "documentos",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "documentos retrieve",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"documentos",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this documento."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"documentos",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4577,\n  \"titulo\": \"string\",\n  \"arquivo\": \"https://ATNtGxtqoHUmfp.jevouGBI6kDFrYhyNY42VfrJm4Noj\",\n  \"imagem\": \"http://MrYTMfoaHenXKNgjdvIvJnTToyueiF.pmoElllrhw9n5wW-6B38EzylsSCNOAcH+cyR8d6XWEGTvE3mloyx-Ff-rY+\"\n}"
+												}
+											]
+										},
+										{
+											"name": "documentos update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "titulo",
+															"value": "string",
+															"description": "(Required) ",
+															"type": "text"
+														},
+														{
+															"key": "arquivo",
+															"value": "http://VeHJtZYtGajJHN.wnmhilMDVl5Y.Q2iuKZqyMt8d",
+															"type": "text"
+														},
+														{
+															"key": "imagem",
+															"value": "https://hmkhOoPBj.zpeqBEt,y,SCTTdMaAL--C8pa3HuYJBPpBwq2pzd-9tKZ",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"documentos",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this documento."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "titulo",
+																	"value": "string",
+																	"description": "(Required) ",
+																	"type": "text"
+																},
+																{
+																	"key": "arquivo",
+																	"value": "http://VeHJtZYtGajJHN.wnmhilMDVl5Y.Q2iuKZqyMt8d",
+																	"type": "text"
+																},
+																{
+																	"key": "imagem",
+																	"value": "https://hmkhOoPBj.zpeqBEt,y,SCTTdMaAL--C8pa3HuYJBPpBwq2pzd-9tKZ",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"documentos",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4577,\n  \"titulo\": \"string\",\n  \"arquivo\": \"https://ATNtGxtqoHUmfp.jevouGBI6kDFrYhyNY42VfrJm4Noj\",\n  \"imagem\": \"http://MrYTMfoaHenXKNgjdvIvJnTToyueiF.pmoElllrhw9n5wW-6B38EzylsSCNOAcH+cyR8d6XWEGTvE3mloyx-Ff-rY+\"\n}"
+												}
+											]
+										},
+										{
+											"name": "documentos partial update",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "titulo",
+															"value": "string",
+															"type": "text"
+														},
+														{
+															"key": "arquivo",
+															"value": "https://MXoqBGgnud.hndBN2iqy+Bp-6uIU7du.tCMllPH",
+															"type": "text"
+														},
+														{
+															"key": "imagem",
+															"value": "https://ukriTnnjVSHFJBSgdoqxu.vpKcguyI2-2rH+HmzoZ4Oeea8m",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"documentos",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this documento."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "titulo",
+																	"value": "string",
+																	"type": "text"
+																},
+																{
+																	"key": "arquivo",
+																	"value": "https://MXoqBGgnud.hndBN2iqy+Bp-6uIU7du.tCMllPH",
+																	"type": "text"
+																},
+																{
+																	"key": "imagem",
+																	"value": "https://ukriTnnjVSHFJBSgdoqxu.vpKcguyI2-2rH+HmzoZ4Oeea8m",
+																	"type": "text"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"documentos",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": 4577,\n  \"titulo\": \"string\",\n  \"arquivo\": \"https://ATNtGxtqoHUmfp.jevouGBI6kDFrYhyNY42VfrJm4Noj\",\n  \"imagem\": \"http://MrYTMfoaHenXKNgjdvIvJnTToyueiF.pmoElllrhw9n5wW-6B38EzylsSCNOAcH+cyR8d6XWEGTvE3mloyx-Ff-rY+\"\n}"
+												}
+											]
+										},
+										{
+											"name": "documentos destroy",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"documentos",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "5205",
+															"description": "(Required) A unique integer value identifying this documento."
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "No response body",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/documentos/:id/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"documentos",
+																":id",
+																""
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "documentos list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/documentos/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/documentos/"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 5028,\n    \"titulo\": \"string\",\n    \"arquivo\": \"https://rCVeBvRrWymIMIApQnii.faJ0Zv-dr2vmi,7X.o0NLUyGK2U91lQE.gwuy2sBjId1O,YGJjBK,NG7GYSB63\",\n    \"imagem\": \"http://eLpewtDZskvFSiHeKbuMfLdGvuYJW.jhwxAn4a2,U\"\n  },\n  {\n    \"id\": 3978,\n    \"titulo\": \"string\",\n    \"arquivo\": \"https://MHcRUMTZYYsRSphAcv.xspgYJ,ERd0Wh+6K+0MgpfBx4+WqywM7imA-HQ2eAj+uV8lqTOuF-JSNsdn7o0tzgWKIkAdadnHpC,4\",\n    \"imagem\": \"https://t.auDwHnrlN9DgPQDxI5dAW0Zd56Vx\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "documentos create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "titulo",
+													"value": "string",
+													"description": "(Required) ",
+													"type": "text"
+												},
+												{
+													"key": "arquivo",
+													"value": "http://VeHJtZYtGajJHN.wnmhilMDVl5Y.Q2iuKZqyMt8d",
+													"type": "text"
+												},
+												{
+													"key": "imagem",
+													"value": "https://hmkhOoPBj.zpeqBEt,y,SCTTdMaAL--C8pa3HuYJBPpBwq2pzd-9tKZ",
+													"type": "text"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/api/v1/documentos/"
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "titulo",
+															"value": "string",
+															"description": "(Required) ",
+															"type": "text"
+														},
+														{
+															"key": "arquivo",
+															"value": "http://VeHJtZYtGajJHN.wnmhilMDVl5Y.Q2iuKZqyMt8d",
+															"type": "text"
+														},
+														{
+															"key": "imagem",
+															"value": "https://hmkhOoPBj.zpeqBEt,y,SCTTdMaAL--C8pa3HuYJBPpBwq2pzd-9tKZ",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/v1/documentos/"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 4577,\n  \"titulo\": \"string\",\n  \"arquivo\": \"https://ATNtGxtqoHUmfp.jevouGBI6kDFrYhyNY42VfrJm4Noj\",\n  \"imagem\": \"http://MrYTMfoaHenXKNgjdvIvJnTToyueiF.pmoElllrhw9n5wW-6B38EzylsSCNOAcH+cyR8d6XWEGTvE3mloyx-Ff-rY+\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "token",
+							"item": [
+								{
+									"name": "refresh",
+									"item": [
+										{
+											"name": "token refresh create",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"refresh\": \"string\",\n  \"access\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/token/refresh/",
+												"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+											},
+											"response": [
+												{
+													"name": "Untitled Response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"refresh\": \"string\",\n  \"access\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/token/refresh/"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"access\": \"string\",\n  \"refresh\": 2947.439469953692\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "token create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"string\",\n  \"username\": \"string\",\n  \"access\": false,\n  \"refresh\": 3534.665702218629\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/token/",
+										"description": "Takes a set of user credentials and returns an access and refresh JSON web\ntoken pair to prove the authentication of those credentials."
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"string\",\n  \"username\": \"string\",\n  \"access\": false,\n  \"refresh\": 3534.665702218629\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/token/"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"access\": \"str\",\n  \"refresh\": \"string\",\n  \"password\": false,\n  \"username\": \"string\"\n}"
 										}
 									]
 								}
