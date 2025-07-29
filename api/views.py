@@ -91,3 +91,11 @@ class DocumentoViewSet(viewsets.ModelViewSet):
     queryset = Documento.objects.all()
     serializer_class = DocumentoSerializer
     parser_classes = (MultiPartParser, FormParser)
+
+    def get_queryset(self):
+        # mostra só os documentos do usuário
+        return self.queryset.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        # associa o usuário logado
+        serializer.save(user=self.request.user)
